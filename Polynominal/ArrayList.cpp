@@ -13,8 +13,26 @@ ArrayList<MyType>::ArrayList(int i) {
 	mas = new MyType[i];
 }
 template<typename MyType>
-ArrayList<MyType>::ArrayList operator += (const ArrayList<MyType>& arrayList1, const ArrayList<MyType>& arrayList2) {
-
+ArrayList<MyType>::ArrayList(int i, long long value) {
+	capacity = i;
+	length = 0;
+	mas = new MyType[i];
+	for (int j = 0; j < i; j++) {
+		mas[i] = value;
+	}
+}
+template<typename MyType>
+int ArrayList<MyType>::operator += (const ArrayList<MyType>& arrayList) {
+	for (int i = arrayList.getLength(); i > -1; i--) {
+		(*this).get() += arrayList;
+	}
+	return *this;
+}
+template<typename MyType>
+int ArrayList<MyType>::operator -= (const ArrayList<MyType>& arrayList) {
+	for (int i = arrayList.getLength(); i > -1; i--) {
+		(*this).get() -= arrayList;
+	}
 	return *this;
 }
 template<typename MyType>
@@ -36,6 +54,10 @@ void ArrayList<MyType>::del(int index) {
 	delete pop(index);
 }
 template<typename MyType>
+MyType* ArrayList<MyType>::get(int index) const {
+	return *mas[index];
+}
+template<typename MyType>
 int ArrayList<MyType>::getCapacity() const {
 	return capacity;
 }
@@ -46,7 +68,7 @@ int ArrayList<MyType>::getLength() const {
 template<typename MyType>
 int ArrayList<MyType>::indexOf(MyType* n) {
 	for (int i = 0; i < length; i++) {
-		if ((*n).getValue() == mas[i].getValue()) {
+		if (*n == mas[i]) {
 			return i;
 		}
 	}

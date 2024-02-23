@@ -3,14 +3,12 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-using namespace std;
+#include "ArrayList.h"
+
 
 int main() {
-	std::ifstream ifs("input.txt");
-	std::string str;
-    while (getline(ifs, str)) { // пока не достигнут конец файла класть очередную строку в переменную (s)
-        cout << str << endl; // выводим на экран
-        str += "+"; // что нибудь делаем со строкой например € добавл€ю плюсик в конце каждой строки
-        cout << str << endl; // и снова вывожу на экран но уже модифицированную строку (без записи ее в файл)
-    }
+	ArrayList<long long> arr = ArrayList<long long>(10, 20);
+	/*for (int i = 0; i < 10; i++) {
+		std::cout << arr.get(i) << std::endl;
+	}*/
 }
