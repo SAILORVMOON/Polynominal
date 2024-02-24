@@ -84,16 +84,6 @@ MyType* ArrayList<MyType>::pop(int index) {
 	return temp;
 }
 template<typename MyType>
-void ArrayList<MyType>::print(int i) {
-	mas[i].print();
-}
-template<typename MyType>
-void ArrayList<MyType>::printAll() {
-	for (int i = 0; i < length; i++) {
-		print(i);
-	}
-}
-template<typename MyType>
 void ArrayList<MyType>::push(MyType* n) {
 	if (capacity == length) {
 		makeLonger();

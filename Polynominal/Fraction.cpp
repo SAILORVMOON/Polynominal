@@ -1,5 +1,4 @@
 #include "Fraction.h" 
-#include <iostream>
 
 Fraction::Fraction() {
     numerator = 0;
@@ -41,8 +40,11 @@ Fraction Fraction::operator* (const Fraction& fraction) {
 Fraction Fraction::operator/ (const Fraction& fraction) {
     return Fraction(numerator * fraction.denominator, denominator * fraction.numerator);
 }
-void Fraction::print() const {
-    std::cout << numerator << std::endl << '-' << std::endl << denominator << std::endl << std::endl;
+long long Fraction::getDenominator() const {
+    return denominator;
+}
+long long Fraction::getNumerator() const {
+    return numerator;
 }
 void Fraction::reduce() {
     long long reducer = NOD((*this).numerator, (*this).denominator);

@@ -8,7 +8,8 @@ public:
     Fraction operator - (const Fraction& fraction);
     Fraction operator * (const Fraction& fraction);
     Fraction operator / (const Fraction& fraction);
-    void print() const;
+    long long getDenominator() const;
+    long long getNumerator() const;
     void reduce();
     
 

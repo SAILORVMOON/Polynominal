@@ -7,8 +7,8 @@
 
 
 int main() {
-	ArrayList<long long> arr = ArrayList<long long>(10, 20);
-	/*for (int i = 0; i < 10; i++) {
-		std::cout << arr.get(i) << std::endl;
-	}*/
+	ArrayList<__int64> arr = ArrayList<__int64>(10, __int64(20));
+	for (int i = 0; i < 10; i++) {
+		std::cout << *(arr.get(i)) << std::endl;
+	}
 }
