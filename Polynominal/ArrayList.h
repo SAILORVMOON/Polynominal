@@ -73,21 +73,21 @@ public:
 		length--;
 		return temp;
 	}
-	void push(MyType* n) {
+	void push(MyType n) {
 		if (capacity == length) {
 			makeLonger();
 		}
 		mas[length] = n;
 		length++;
 	}
-	void put(MyType* n, int index) {
+	void put(MyType n, int index) {
 		if (capacity == length) {
 			makeLonger();
 		}
 		for (int i = length; i > index - 1; i--) {
 			mas[i] = mas[i - 1];
 		}
-		mas[index] = new MyType(n);
+		mas[index] = MyType(n);
 		length++;
 	}
 private:

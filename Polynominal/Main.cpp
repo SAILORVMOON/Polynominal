@@ -7,8 +7,16 @@
 
 
 int main() {
-	ArrayList<__int64> arr = ArrayList<__int64>(10, __int64(20));
+	ArrayList<Fraction> arr = ArrayList<Fraction>(10);
 	for (int i = 0; i < 10; i++) {
-		std::cout << *(arr.get(i)) << std::endl;
+		arr.put(Fraction(10 + i, 21 + i), i);
+	}
+	for (int i = 0; i < 10; i++) {
+		std::cout << (*arr.get(i)).getNumerator() << '|' << (*arr.get(i)).getDenominator() << std::endl;
+	}
+	arr.put(245, 3);
+	std::cout << std::endl;
+	for (int i = 0; i < 10; i++) {
+		std::cout << (*arr.get(i)).getNumerator() << '|' << (*arr.get(i)).getDenominator() << std::endl;
 	}
 }
