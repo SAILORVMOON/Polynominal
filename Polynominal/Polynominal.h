@@ -11,4 +11,5 @@ private:
 	char var;
 	Fraction* getCoeffs(std::string* pol);
 	ArrayList<Fraction> coefficients;
+	ArrayList<Fraction> remain;
 };
