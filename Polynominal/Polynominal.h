@@ -6,7 +6,8 @@ class Polynominal {
 public:
 	Polynominal();
 	Polynominal(std::string* pol);
-
+	Polynominal(int len);
+	AddElement(Fraction elem);
 private:
 	char var;
 	Fraction* getCoeffs(std::string* pol);
